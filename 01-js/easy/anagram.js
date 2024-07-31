@@ -5,7 +5,19 @@
 */
 
 function isAnagram(str1, str2) {
+str1=str1.replace(/[^\w]/g,'').toLowerCase();
+  str2=str2.replace(/'[^\w]/g,'').toLowerCase();
 
+  if(str1.length!=str2.length)
+    console.log("false");
+
+  const sortedStr1=str1.split('').sort().join('');
+  const sortedStr2=str2.split('').sort().join('');
+
+  if(sortedStr1==sortedStr2)
+    console.log("true");
+  else
+    console.log("false");
 }
 
 module.exports = isAnagram;
